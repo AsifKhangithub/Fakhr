@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>FAKHR TEAM</title>
+</head>
+<script>
+
+     function connectPhidgets(){
+        fetch('temp.csv')
+        .then(response => response.text())
+        .then(text => {
+           var data = text.split("\n");
+           document.getElementById("dataLabel1").innerHTML = data[data.length - 2];
+        })
+     }
+    function connectPhidgetss(){
+
+        fetch('arduino.csv')
+        .then(response => response.text())
+        .then(text => {
+           var data = text.split("\n");
+           document.getElementById("dataLabel2").innerHTML = data[data.length - 2];
+        })
+    }
+
+function start(){
+    connectPhidgets();
+    connectPhidgetss();
+}
+
+</script>
+    <body onload="start()">
+
+
+         <div>
+            <h1>FAKHR</h1>
+            <h2 id="dataLabel1">?</h2>
+             <h2 id="dataLabel2">?</h2>
+
+        </div>
+    </body>
+</html>
+
