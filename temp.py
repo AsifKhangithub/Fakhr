@@ -18,5 +18,6 @@ while True:
  with open ('/var/www/html/arduino.csv','a') as datafile:
   datafile.write(str(line) + ("\n"))
  time.sleep(1)
+ 
 
 
