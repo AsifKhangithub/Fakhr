@@ -1,5 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="default.css" />
+    <meta charset="utf-8">
+    <title>FAKHR TEAM</title>
+    <meta http-equiv="refresh" content="0.5">
+</head>
+<script>
+
+     function connectPhidgets(){
+        fetch('temp.csv')
+        .then(response => response.text())
+        .then(text => {
+           var data = text.split("\n")
+           document.getElementById("dataLabel1").innerHTML = "Tempraturen är = " + data[data.length - 2] + "°C";
+        })
+     }
+    function connectPhidgetss(){
+
+        fetch('arduino.csv')
+        .then(response => response.text())
+        .then(text => {
            var data = text.split("\n");
-           document.getElementById("dataLabel2").innerHTML = data[data.length - 2] + ":)";
+           document.getElementById("dataLabel2").innerHTML = "Vind Hastigheten är = " + data[data.length - 2] + "m/s";
         })
     }
 
@@ -30,3 +55,4 @@ body {
         </div>
     </body>
 </html>
+
