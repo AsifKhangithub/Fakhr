@@ -1,15 +1,21 @@
+    #Vi importerar bibloteket för tid och tempsensor data från sensor
+    #Biblotek för temp sensor behvöer installeras med <sudo apt-get install python3-w1thermsensor>
+
 import time
-import serial
 from w1thermsensor import W1ThermSensor
 sensor = W1ThermSensor()
 ser.reset_input_buffer()
 
 while True:
+ #Vi läser data när koden körs från sensorn.
  temperature = str(sensor.get_temperature())
- siffror = temperature[0:3]
+ # Här kontrollerar vi att vi får in data men inte alla siffror som kommer in eftersom vi får många decimaler
+ # Då gör vi index 0 till 4 för att läsa första 5 siffror inklusive '.' så det blir ex "23.00" .
+ siffror = temperature[0:4]
 
-    #Write data to file in CSV format
+    #Skickar datan till temp.csv som läses senare av webbsidan
+    #Efter det lägger vi till ny rads tecken för att skriva det nya data i en ny rad.
  with open ('/var/www/html/temp.csv','a') as datafile:
   datafile.write(str(siffror) + ("\n"))
- time.sleep(1)
+
 

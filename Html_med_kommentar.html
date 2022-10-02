@@ -1,0 +1,106 @@
+<!–-
+Här lägger vi stöd till scenska bokstäver i webbsidan
+––>
+ 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ 
+<!–-
+I head lägger vi till title och lite annat som är nödvändig för webbsidan
+<meta http-equiv="refresh" content="0.8"> gör att sidan uppdateras av sig själv var 0,8 sekunder.
+ ––>
+ 
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="default.css" />
+    <meta charset="utf-8">
+    <title>FAKHR TEAM</title>
+    <meta http-equiv="refresh" content="0.8">
+</head>
+ 
+<!–-
+ 
+  i script skriver vi olika funktioner som skall användas för att hämta data från csv filerna 
+  fetch gör att den läser från en viss fil
+  .then(response => response.text()) gör att den hämtar text som har blivit fetchad via förra funktion.
+  texten ska splitas när det är en ny rad, annars om vi inte hade split då hade vi fått längre och orelevant text.
+  functionerna döps till connectPhidgets och connectPhidgetss
+  vi har två data labels som hämtar datan och skall användas för att skicka iväg texten till webbsidan.
+  dataLabel1 och dataLabel2
+ 
+––>
+ 
+<script>
+ 
+     function connectPhidgets(){
+        fetch('temp.csv')
+        .then(response => response.text())
+        .then(text => {
+           var data = text.split("\n")
+           document.getElementById("dataLabel1").innerHTML = "Temperatur = " + data[data.length - 2] + "°C";
+        })
+     }
+    function connectPhidgetss(){
+ 
+        fetch('arduino.csv')
+        .then(response => response.text())
+        .then(text => {
+           var data = text.split("\n");
+           document.getElementById("dataLabel2").innerHTML = "Vindhastighet = " + data[data.length - 2] + "m/s";
+        })
+    }
+ 
+ 
+  <!–-
+ 
+  Här kör vi igång funktionerna som som har gjorts ovan för att få en data.
+ 
+  ––>
+function start(){
+    connectPhidgets();
+    connectPhidgetss();
+}
+</script>
+ 
+ 
+  <!–-
+  Här förklarar vi hur webbsidan ska se ut och vad den ska innehålla
+  i body lägger vi bilden som ligger i bakgrunden och inte påverkar text.
+  vi kontollerara även hur den ska se ut och hur stor den ska bli.
+  background-color:DodgerBlue; gör att den kontrollerar bakgrundsfärgen på webbsidan
+  ––>
+ 
+<style>
+ 
+  body {
+  background-image: url('https://www.resebarometern.se/media/destinations/1140x445_phuket.jpg'  ) ;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 55% 55%;
+  background-position: right 50% bottom 0%;
+  background-color:DodgerBlue;
+  font-family: 'Courier New', monospace;
+}
+</style>
+ 
+  <!–-
+  Här lägger vi texten som läggs i webbsidan i första texten lägger vi backgrund färg 
+  och gör texten lite finare som en rubrik
+  i den andra och tredje texten lägger vi kod för att kontrollera storleken av texten
+  texten som läses här är den texten som kommer från funktionerna som görs högre upp och skickas 
+  som variabel datalabel1 och datalabel2.
+ 
+  ––>
+ 
+   <body onload="start()">
+         <div class="center">
+  <p> <center><h1 style="background-color:red;"> <b>FAKHR.se</b> Always checking the weather</h1></p>
+            <p style ="background-color:Tomato;font-size:80px;line-height:0;" id="dataLabel1"></p>
+             <p style ="background-color:DodgerBlue;font-size:80px;line-height:0;"id="dataLabel2"></p>
+        </center>
+        </div>
+    </body>
+</html>
+ 
+ 
