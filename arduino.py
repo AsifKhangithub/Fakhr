@@ -5,7 +5,7 @@ import serial # importerar serial library där vi kan arbeta med  seriell kommun
 # Den första är ansltningen via USB, data från arduino hamnar, bit hastighet sätts till 9600 sist en timeout en sekund
 
 ser = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
-# Spola bufferten 
+# Spola bufferten, rensar platsen där allt info kommer in innan det sätts igång 
 ser.reset_input_buffer()
 
 
