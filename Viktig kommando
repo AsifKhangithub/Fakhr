@@ -1,1 +1,2 @@
 sudo crontab -e
+sudo apt install apache2 -y #installerar apache som gör din Rpi till en server, skapar en webbsida(lokal) på din IP adress
