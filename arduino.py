@@ -11,7 +11,7 @@ ser.reset_input_buffer()
 
 while True: # En kontitinerlig loop
 # Readline läser in det som kommer från serilaanslutningen. UTF8 Decoder är en teckenavkodning som kan göra alla Unicode-tecken läsbara.
-#Slutligen avslutas med rstrip() tar bort alla efterföjare slutet av strängen mellansalg som standard. 
+#Slutligen avslutas med rstrip() tar bort alla efterföjare slutet av strängen mellanslag som standard. 
 
  line = ser.readline().decode('utf-8').rstrip()
      # När vi läser data från arduino och vind sensor står stilla
