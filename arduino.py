@@ -14,7 +14,7 @@ while True: # En kontitinerlig loop
 #Slutligen avslutas med rstrip() tar bort alla efterföjare slutet av strängen mellansalg som standard. 
 
  line = ser.readline().decode('utf-8').rstrip()
-     # När vi läser data från arduino och vind sensor stor stilla
+     # När vi läser data från arduino och vind sensor står stilla
      # Då får vi - värden och för att få bort det använde vi replace
  tabort_minus = line.replace('-', '0.00')
     # Och här läser vi första 4 värden som kommer från sensorn.
