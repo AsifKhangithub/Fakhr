@@ -1,10 +1,9 @@
-    #Vi importerar bibloteket för tid och tempsensor data från sensor
-    #Biblotek för temp sensor behvöer installeras med <sudo apt-get install python3-w1thermsensor>
-
+    #Vi importerar bibloteket för tid och tempsensor data från sensor Biblotek för temp sensor behvöer installeras med <sudo apt-get install python3-w1thermsensor>
+     # Eller installera via < sudo pip3 install w1thermsensor > innan installering måste man aktivera 1-wire Interface genom att skriva i kommando raden <sudo raspi-config>
 import time
 from w1thermsensor import W1ThermSensor
 sensor = W1ThermSensor()
-ser.reset_input_buffer()
+
 
 while True:
  #Vi läser data när koden körs från sensorn.
