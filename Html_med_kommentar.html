@@ -1,5 +1,5 @@
 <!–-
-Här lägger vi stöd till svenska bokstäver i webbsidan
+Här finns stöd till svenska bokstäver i webbsidan
 ––>
  
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -21,12 +21,12 @@ I head lägger vi till title och lite annat som är nödvändig för webbsidan
  
 <!–-
  
-  i script skriver vi olika funktioner som skall användas för att hämta data från csv filerna 
+  i script skrivs olika funktioner som skall användas för att hämta data från csv filerna 
   fetch gör att den läser från en viss fil
   .then(response => response.text()) gör att den hämtar text som har blivit fetchad via förra funktion.
   texten ska splitas när det är en ny rad, annars om vi inte hade split då hade vi fått längre och orelevant text.
   functionerna döps till connectPhidgets och connectPhidgetss
-  vi har två data labels som hämtar datan och skall användas för att skicka iväg texten till webbsidan.
+  Det finns två data labels som hämtar datan och skall användas för att skicka iväg texten till webbsidan.
   dataLabel1 och dataLabel2
  
 ––>
@@ -65,8 +65,8 @@ function start(){
  
  
   <!–-
-  Här förklarar vi hur webbsidan ska se ut och vad den ska innehålla
-  i body lägger vi bilden som ligger i bakgrunden och inte påverkar text.
+  Här förklaras hur webbsidan ska se ut och vad den ska innehålla.
+  I body finnd bilden som visas i bakgrunden och som ej påverkar text.
   vi kontollerara även hur den ska se ut och hur stor den ska bli.
   background-color:DodgerBlue; gör att den kontrollerar bakgrundsfärgen på webbsidan
   ––>
@@ -85,9 +85,9 @@ function start(){
 </style>
  
   <!–-
-  Här lägger vi texten som läggs i webbsidan i första texten lägger vi backgrund färg 
-  och gör texten lite finare som en rubrik
-  i den andra och tredje texten lägger vi kod för att kontrollera storleken av texten
+  Här finns texten som läggs i webbsidan i första texten lägger vi backgrund färg 
+  och gör texten lite finare som en rubrik.
+  I den andra och tredje texten lägger vi kod för att kontrollera storleken av texten
   texten som läses här är den texten som kommer från funktionerna som görs högre upp och skickas 
   som variabel datalabel1 och datalabel2.
  

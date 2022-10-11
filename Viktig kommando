@@ -1,7 +1,7 @@
 sudo crontab -e
 sudo apt install apache2 -y #installerar apache som gör din Rpi till en server, skapar en webbsida(lokal) på din IP adress
 
-Med hjälp av echo > ersätter den gammla data med nya.
+Med hjälp av echo > ersättes den gammla data med nya.
 
 @reboot python /home/Fakhreddin98/temp.py
 @reboot python /home/Fakhreddin98/arduino.py
