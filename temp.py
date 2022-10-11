@@ -17,4 +17,4 @@ while True:
  with open ('/var/www/html/temp.csv','a') as datafile:
   datafile.write(str(siffror) + ("\n"))
 
-
+# Tack
